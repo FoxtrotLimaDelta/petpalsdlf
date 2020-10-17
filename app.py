@@ -11,12 +11,13 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from config import username, password
+#from config import username, password
 
 #engine = create_engine(os.environ.get('DATABASE_URL', ''))
 
+engine = create_engine("sqlite:///db.sqlite")
 
-engine = create_engine(f'postgresql://{username}:{password}@localhost:5433/petpals')
+#engine = create_engine(f'postgresql://{username}:{password}@localhost:5433/petpals')
 
 Base = automap_base()
 Base.prepare(engine, reflect=True)
